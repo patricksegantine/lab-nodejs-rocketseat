@@ -1,2 +1,70 @@
-# lab-nodejs-rocketseat
-Reopositório para armazenamento do código fonte da aplicação desenvolvida no curso NodeJS Starter da Rocketset
+Repositório para armazenamento do código fonte da aplicação desenvolvida no curso NodeJS Starter da Rocketset
+
+
+Objetivo:
+Construção de uma API baseada no site www.producthunt.com
+
+
+Ferramentas utilizadas:
+Express
+MongoDB
+Docker
+Robo 3T
+
+Então, bora codar!!!
+
+# iniciando a estrutura do projeto
+$ yarn init -y
+
+
+Instalando o Express (Servidor Web):
+$ yarn add express
+
+
+Instalando o Nodemon (utilitário para reload de forma automática):
+
+$ yarn add nodemon -D
+
+
+Configurando o Nodemon:
+
+package.json
+{
+  ...
+  "scripts": {
+    "dev": "nodemon server.js"
+  },
+  ...
+}
+
+Testando o Nodemon:
+$ yarn dev
+
+
+
+Baixando e subindo o container docker com o MongoDB:
+
+# baixa a imagem do mongo
+> docker pull mongo
+
+# executa o container com o mongodb
+> docker run --name mongodb -p 27017:27017 -d mongo
+
+# lista os container em execução
+> docker ps
+
+
+# testando o mongodb
+http://localhost:27017/
+
+a seguinte mensagem deve ser exibida no navegador:
+
+"It looks like you are trying to access MongoDB over HTTP on the native driver port."
+
+
+# Instalando o mongoose (ORM)
+
+$ yarn add mongoose
+
+
+Tudo funcionando!!!
