@@ -4,9 +4,17 @@ const Product = mongoose.model('Product');
 
 module.exports = {
   async index(req, res) {
-    const products = await Product.find();
+    // const products = await Product.find();
 
-    return res.json(products);
+    try {
+      // Paginação utilizando o plugin mongoose-paginate
+      const { page = 1 } = req.query;
+      const products = await Product.paginate({}, { page, limit: 10 });
+  
+      return res.json(products);
+    } catch (error) {
+      res.json({statusOk: false, message: "Erro ao paginar os dados"});
+    }
   },
 
   async show(req, res) {
@@ -18,7 +26,7 @@ module.exports = {
   async store(req, res) {
     const product = await Product.create(req.body);
 
-    return res.json(Product);
+    return res.json(product);
   },
 
   async update(req, res) {

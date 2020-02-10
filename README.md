@@ -67,4 +67,9 @@ a seguinte mensagem deve ser exibida no navegador:
 $ yarn add mongoose
 
 
+# Paginação de registros:
+$ yarn add mongoose-paginate
+
+
+
 Tudo funcionando!!!
